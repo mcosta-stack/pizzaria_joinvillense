@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Joinvillense</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <h1>Pizzaria Joinvillense</h1>
+    <p>Sabor artesanal direto do coração de Joinville, SC</p>
+    <nav class="menu">
+      <a href="#sobre">Sobre</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#pedido">Simular Pedido</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section id="sobre" class="secao">
+      <h2>Nossa História</h2>
+      <div class="sobre-conteudo">
+        <img src="img/pizzaria_joinvillense.jpg" alt="Pizzaria Joinvillense" class="imagem-destaque">
+        <div>
+          <p>
+            A <strong>Pizzaria Joinvillense</strong> nasceu com a ideia de unir a tradição da pizza italiana
+            com ingredientes frescos da região de Joinville. Nossa massa descansa por 24 horas e é assada
+            na hora, garantindo bordas crocantes e recheio generoso.
+          </p>
+          <p>
+            Atendemos todos os bairros de Joinville de terça a domingo, das 18h às 23h.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cardapio" class="secao">
+      <h2>Sabores Mais Pedidos</h2>
+      <div class="grade-sabores">
+        <div class="cartao">
+          <img src="img/joinvillense.jpg" alt="Pizza Joinvillense Especial" class="imagem-sabor">
+          <h3>Joinvillense Especial</h3>
+          <p>Molho de tomate, mussarela, linguiça Blumenau, cebola roxa e orégano.</p>
+        </div>
+        <div class="cartao">
+          <img src="img/pizza-calabresa.webp" alt="Pizza Calabresa Tradicional" class="imagem-sabor">
+          <h3>Calabresa Tradicional</h3>
+          <p>Molho de tomate, mussarela, calabresa fatiada e azeitonas pretas.</p>
+        </div>
+        <div class="cartao">
+          <img src="img/margherta.jpg" alt="Pizza Margherita" class="imagem-sabor">
+          <h3>Margherita</h3>
+          <p>Molho de tomate, mussarela, rodelas de tomate fresco e manjericão.</p>
+        </div>
+        <div class="cartao">
+          <img src="img/quatro-queijos.jpg" alt="Pizza Quatro Queijos" class="imagem-sabor">
+          <h3>Quatro Queijos</h3>
+          <p>Mussarela, provolone, parmesão e requeijão cremoso.</p>
+        </div>
+      </div>
+
+      <div class="tabela-precos">
+        <h3>Tamanhos e Valores</h3>
+        <ul>
+          <li><strong>Média</strong> (6 fatias): R$ 45,00</li>
+          <li><strong>Grande</strong> (8 fatias): R$ 60,00</li>
+          <li><strong>Família</strong> (12 fatias): R$ 75,00</li>
+        </ul>
+        <p class="aviso-desconto">Promoção: pedidos a partir de 3 pizzas ganham 10% de desconto!</p>
+      </div>
+    </section>
+
+    <section id="pedido" class="secao">
+      <h2>Simulador de Pedido</h2>
+      <p>Preencha os dados abaixo para calcular o valor total e a quantidade de fatias do seu pedido.</p>
+
+      <form id="form-pedido">
+        <div class="campo">
+          <label for="nome">Seu nome:</label>
+          <input type="text" id="nome" >
+        </div>
+
+        <div class="campo">
+          <label for="sabor">Escolha o sabor:</label>
+          <select id="sabor">
+            <option value=""></option>
+            <option value="Joinvillense Especial">Joinvillense Especial</option>
+            <option value="Calabresa Tradicional">Calabresa Tradicional</option>
+            <option value="Margherita">Margherita</option>
+            <option value="Quatro Queijos">Quatro Queijos</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="tamanho">Tamanho da pizza:</label>
+          <select id="tamanho">
+            <option value=""></option>
+            <option value="media">Média (6 fatias)  R$ 45,00</option>
+            <option value="grande">Grande (8 fatias)  R$ 60,00</option>
+            <option value="familia">Família (12 fatias)  R$ 75,00</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="quantidade">Quantidade de pizzas (de 1 a 20):</label>
+          <input type="number" id="quantidade" min="1" max="20">
+        </div>
+
+        <div class="campo">
+          <label for="entrega"></label>
+          <select id="entrega">
+            <option value="retirar">Retirar no balcão (Grátis)</option>
+            <option value="entregar">Entrega em Joinville (+ R$ 10,00)</option>
+          </select>
+        </div>
+
+        <button type="button" class="botao" onclick="calcularPedido()">Calcular Pedido</button>
+      </form>
+
+      <div id="mensagem" class="mensagem"></div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Pizzaria Joinvillense &copy; 2026 - Rua das Palmeiras, 1
